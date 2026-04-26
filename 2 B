@@ -1,0 +1,44 @@
+print("Enter the size of A Matrix")
+m = as.integer(readline(prompt ='m=')) 
+n = as.integer(readline(prompt ='n=')) 
+asize <- m*n
+avec = vector(mode="integer", length=0)
+
+for(i in 1:asize) {
+  mv1 = as.integer(readline())
+  avec <- c(avec, mv1)
+}
+A <- matrix(data=avec, nrow=m, ncol=n, byrow=TRUE)
+
+print("Enter the size of B Matrix")
+p = as.integer(readline(prompt ='p=')) 
+s = as.integer(readline(prompt ='s=')) 
+bsize <- p*s
+bvec = vector(mode="integer", length=0)
+
+for(i in 1:bsize) {
+  mv2 = as.integer(readline())
+  bvec <- c(bvec, mv2)
+}
+B <- matrix(data=bvec, nrow=p, ncol=s, byrow=TRUE)
+
+print("Matrix of A"); 
+print(A)
+print("Matrix of B"); 
+print(B)
+
+cat("Resultant Matrices\n")
+print("Addition of Two Matrices="); 
+print(A+B)
+print("Subtraction of Two Matrices="); 
+print(A-B)
+print("Scalar Multiplication of A Matrix="); 
+print(3*A)
+print("Multiplication of Two Matrices="); 
+print(A %*% B)
+print("Diagonal Matrix of A"); 
+print(diag(A))
+cat("Transpose of A\n"); 
+print(t(A))
+cat("Inverse of A\n"); 
+print(solve(A))
